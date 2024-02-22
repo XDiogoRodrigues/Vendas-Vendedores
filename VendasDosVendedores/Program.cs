@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using VendasDosVendedores.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connection = builder.Configuration.GetConnectionString("Connection");
+
+builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
 
 var app = builder.Build();
 
