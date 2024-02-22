@@ -4,6 +4,9 @@ namespace VendasDosVendedores.Models;
 
 public class Vendedor
 {
+    [Key]
+    public int VendedorId { get; set; }
+
     [Required]
     [StringLength(200, MinimumLength =3, ErrorMessage ="O {} deve ter no mínimo {} palavras e no máximo {}")]
     [Display(Name = "Nome do vendedor")]

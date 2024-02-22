@@ -4,6 +4,9 @@ namespace VendasDosVendedores.Models;
 
 public class Login
 {
+    [Key]
+    public int LoginId { get; set; }
+
     [Required]
     [EmailAddress]
     public string Usuario { get; set; }
